@@ -13,6 +13,7 @@
                         <td>{{$brand->brand}}</td>
                         <td>{{$brand->brandJP}}</td>
                         <td><a href="{{ route('brands.edit', [ $brand->id ]) }}">[編集]</a></td>
+                       
                 </tr>
         </table>
         @endforeach

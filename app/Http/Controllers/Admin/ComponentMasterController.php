@@ -16,7 +16,9 @@ class ComponentMasterController extends Controller
      */
     public function index()
     {
-        return view('admin.component.index');
+        $components=MComponent::all();
+        
+        return view('admin.component.index' , compact('components'));
     }
 
     /**
@@ -37,20 +39,20 @@ class ComponentMasterController extends Controller
      */
     public function store(Request $request)
     {
-        ////
+        //dd($request);
+        
         $this->validate($request, MComponent::$rules);
 
         $m_component = new MComponent;
         $form = $request->all();
         
         // データベースに保存する
-        $m_component->fill($form);
-        $m_component->save();
+        $m_component->fill($form)->save();
         
          // フォームから送信されてきた_tokenを削除する
         unset($form['_token']);
         
-        return redirect('admin/component/create');
+        return redirect('admin/components/create');
     }
 
     /**
@@ -73,6 +75,9 @@ class ComponentMasterController extends Controller
     public function edit($id)
     {
         //
+        $component = MComponent::find($id);
+        
+        return view('admin.component.edit' , ['component' => $component]);
     }
 
     /**
@@ -85,16 +90,32 @@ class ComponentMasterController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $this->validate($request,MComponent::$rules);
+        
+        $component = MComponent::find($request->id);
+        
+        $form = $request->all();
+        unset($form['_token']);
+        
+        $component->fill($form)->save();
+        
+        return redirect('admin/component');
     }
-
+    
     /**
      * Remove the specified resource from storage.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request)
     {
         //
+        $component = MComponent::find($request->id);
+        
+        $brand->delete();
+        
+        return redirect( 'admin/component' );
+        
     }
 }

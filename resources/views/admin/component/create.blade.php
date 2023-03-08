@@ -7,7 +7,8 @@
             <div class="col-md-8 mx-auto">
                 <h2>成分名新規登録</h2>
                 
-                <form action="{{ route('components.store') }}" method="post" enctype="text/plain">
+                <form action="{{ route('components.store') }}" method="post">
+                    
                     @csrf    
                     @if (count($errors) > 0)
                         <ul>

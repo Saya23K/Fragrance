@@ -13,7 +13,7 @@ class MComponent extends Model
 
     public static $rules = array(
         'component' => 'required',
-        'component_comment' => 'required',
+        // 'component_comment' => 'required',
     );
     
 }

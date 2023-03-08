@@ -36,7 +36,7 @@ class BrandMasterController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -96,7 +96,7 @@ class BrandMasterController extends Controller
     {
         // Validationをかける
         $this->validate($request, MBrand::$rules);
-        // News Modelからデータを取得する
+        // Modelからデータを取得する
         $brand = MBrand::find($request->id);
         // 送信されてきたフォームデータを格納する
         $form = $request->all();
@@ -114,8 +114,14 @@ class BrandMasterController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request)
     {
         //
+        $brand = MBrand::find($request->id);
+        
+        $brand->delete();
+        
+        return redirect( 'admin/brand' );
+    
     }
 }
