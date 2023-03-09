@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('m_components', function (Blueprint $table) {
             $table->id();
             $table->string('component');
-            $table->string('component_comment');
+            $table->string('component_comment')->nullable();
             $table->timestamps();
         });
     }

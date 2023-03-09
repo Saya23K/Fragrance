@@ -105,7 +105,7 @@ class BrandMasterController extends Controller
         // 該当するデータを上書きして保存する
         $brand->fill($form)->save();
 
-        return redirect('admin/brand');
+        return redirect('admin/brands');
     }
 
     /**
@@ -114,14 +114,15 @@ class BrandMasterController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Request $request)
+    public function destroy(Request $request, $id)
     {
+        //dd($id);
         //
-        $brand = MBrand::find($request->id);
+        $brand = MBrand::find($id);
         
         $brand->delete();
         
-        return redirect( 'admin/brand' );
+        return redirect( 'admin/brands' );
     
     }
 }

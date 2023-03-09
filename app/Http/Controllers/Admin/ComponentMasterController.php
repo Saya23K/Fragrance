@@ -39,7 +39,7 @@ class ComponentMasterController extends Controller
      */
     public function store(Request $request)
     {
-        //dd($request);
+
         
         $this->validate($request, MComponent::$rules);
 
@@ -48,6 +48,8 @@ class ComponentMasterController extends Controller
         
         // データベースに保存する
         $m_component->fill($form)->save();
+        
+        dd($m_component);
         
          // フォームから送信されてきた_tokenを削除する
         unset($form['_token']);
