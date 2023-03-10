@@ -33,6 +33,8 @@
                     
                     <input type="submit" class="btn btn-primary" value="登録">
                 </form>
+                <br>
+                <a href="{{ url('admin/components') }}">→戻る</a>
             </div>
         </div>
     </div>

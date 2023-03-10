@@ -49,13 +49,12 @@ class BrandMasterController extends Controller
         $form = $request->all();
         
         // データベースに保存する
-        $m_brand->fill($form);
-        $m_brand->save();
+        $m_brand->fill($form)->save();
         
          // フォームから送信されてきた_tokenを削除する
         unset($form['_token']);
         
-        return redirect('admin/brands/create');
+        return redirect('admin/brands');
         
     }
 
@@ -100,6 +99,7 @@ class BrandMasterController extends Controller
         $brand = MBrand::find($request->id);
         // 送信されてきたフォームデータを格納する
         $form = $request->all();
+        
         unset($form['_token']);
 
         // 該当するデータを上書きして保存する
@@ -117,7 +117,7 @@ class BrandMasterController extends Controller
     public function destroy(Request $request, $id)
     {
         //dd($id);
-        //
+        
         $brand = MBrand::find($id);
         
         $brand->delete();

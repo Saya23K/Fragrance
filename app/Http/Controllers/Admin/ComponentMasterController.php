@@ -39,7 +39,7 @@ class ComponentMasterController extends Controller
      */
     public function store(Request $request)
     {
-
+        //dd($request);
         
         $this->validate($request, MComponent::$rules);
 
@@ -48,8 +48,6 @@ class ComponentMasterController extends Controller
         
         // データベースに保存する
         $m_component->fill($form)->save();
-        
-        dd($m_component);
         
          // フォームから送信されてきた_tokenを削除する
         unset($form['_token']);
@@ -92,7 +90,7 @@ class ComponentMasterController extends Controller
     public function update(Request $request, $id)
     {
         //
-        $this->validate($request,MComponent::$rules);
+        $this->validate($request, MComponent::$rules);
         
         $component = MComponent::find($request->id);
         
@@ -101,7 +99,8 @@ class ComponentMasterController extends Controller
         
         $component->fill($form)->save();
         
-        return redirect('admin/component');
+        
+        return redirect('admin/components');
     }
     
     /**
@@ -110,14 +109,14 @@ class ComponentMasterController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Request $request)
+    public function destroy(Request $request, $id)
     {
         //
-        $component = MComponent::find($request->id);
+        $component = MComponent::find($id);
         
-        $brand->delete();
+        $component->delete();
         
-        return redirect( 'admin/component' );
+        return redirect( 'admin/components' );
         
     }
 }

@@ -49,7 +49,7 @@ Route::prefix('admin')->group(function () {
     Route::resource('brands', BrandMasterController::class)->only([
     'index', 'create', 'store', 'edit', 'update', 'destroy']);
     Route::resource('components', ComponentMasterController::class)->only([
-    'index', 'create', 'store', /*'edit', 'update', 'destroy'*/]);
+    'index', 'create', 'store', 'edit', 'update', 'destroy']);
 });
 
 
