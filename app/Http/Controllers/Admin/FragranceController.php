@@ -8,11 +8,9 @@ use Illuminate\Http\Request;
 use App\Models\Fragrance;
 use App\Models\MBrand;
 use App\Models\MComponent;
+use App\Models\Component;
 
 class FragranceController extends Controller
-
-
-
 {
     /**
      * Display a listing of the resource.
@@ -21,6 +19,7 @@ class FragranceController extends Controller
      */
     public function index()
     {
+        
         return view('admin.fragrance.index');
     }
 
@@ -35,9 +34,12 @@ class FragranceController extends Controller
         $mbrand = new MBrand();
         $brands = $mbrand->get();
         
+        $mcomponent = new MComponent();
+        $components = $mcomponent->get();
+        
         // dd($brands);
         
-         return view('admin.fragrance.create', compact('brands'));
+         return view('admin.fragrance.create', compact('brands', 'components'));
         
     }
 
@@ -55,24 +57,42 @@ class FragranceController extends Controller
         $fragrance = new Fragrance;
         $form = $request->all();
 
-        // フォームから画像が送信されてきたら、保存して、$news->image_path に画像のパスを保存する
+        // フォームから画像が送信されてきたら、保存して、$fragrance->image_path に画像のパスを保存する
         if (isset($form['image'])) {
             $path = $request->file('image')->store('public/image');
             $fragrance->image_path = basename($path);
         } else {
-            $news->image_path = null;
+            $fragrance->image_path = null;
         }
+        
+        $topnotes = $form['topnote'];
 
         // フォームから送信されてきた_tokenを削除する
         unset($form['_token']);
         // フォームから送信されてきたimageを削除する
         unset($form['image']);
+        //  フォームから送信されてきたtopnoteを削除する
+        unset($form['topnote']);
+    
 
         // データベースに保存する
         $fragrance->fill($form);
         $fragrance->save();
+        
+        // トップノート登録
+        foreach ($topnotes as $topnote) {
+            $component = new Component;
+            
+            // 登録するデータを設定
+            $component->fragrance_id = $fragrance->id;
+            $component->m_component_id = $topnote;
+            $component->note = 1;
+            
+            // データベースに保存する
+            $component->save();
+        }
 
-        return redirect('admin/fragrances/create');
+        return redirect('admin/fragrances');
         
     }
 

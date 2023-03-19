@@ -12,10 +12,10 @@ class Fragrance extends Model
     protected $guarded = array('id');
 
     public static $rules = array(
-        'm_component_id' => 'required',
+        'm_brand_id' => 'required',
         'fragrance' => 'required',
-        'comment' => 'required',
-        'kind' => 'required',
-        'image_path' => 'required',
+        // 'comment' => 'required',
+        // 'kind' => 'required',
+        // 'image_path' => 'required',
         );
 }

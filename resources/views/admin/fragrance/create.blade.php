@@ -14,10 +14,14 @@
                                 <option value="{{ $brand->id }}">{{ $brand->brand }}</option>
                                 @endforeach
                                 </select>
-                                
+                                <br>
                                 <label>香水名</label>
                                 <input type="text" name="fragrance">
-                                
+                                <br>
+                                <label>トップノート</label>
+                                @foreach ($components as $component)
+                                    <input type="checkbox" name="topnote[]" value="{{ $component->id }}">{{ $component->component }}
+                                @endforeach
                                 
                                 
                                 <input type='submit' value='送信' />
