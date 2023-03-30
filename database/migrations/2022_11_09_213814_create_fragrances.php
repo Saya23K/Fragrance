@@ -19,6 +19,8 @@ return new class extends Migration
             $table->string('fragrance');
             $table->string('comment');
             $table->integer('kind');
+            $table->integer('capacity');
+            $table->integer('price');
             $table->string('image_path')->nullable();
             $table->timestamps();
         });

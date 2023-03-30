@@ -14,8 +14,19 @@ class Fragrance extends Model
     public static $rules = array(
         'm_brand_id' => 'required',
         'fragrance' => 'required',
-        // 'comment' => 'required',
-        // 'kind' => 'required',
+        'comment' => 'required',
+        'kind' => 'required',
+        'capacity' => 'required',
+        'price' => 'required',
         // 'image_path' => 'required',
         );
+
+    
+     public function brand()
+    {
+        return $this->belongsTo('App\Models\MBrand','m_brand_id');
+
+    }
+    
 }
+

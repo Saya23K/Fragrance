@@ -3,7 +3,6 @@
 @section('content')
     <div class="container">
         <div class="row">
-            <div class="col-md-8 mx-auto">
                 
                 <h2>ブランド名編集</h2>
                 <form action="{{ route('brands.update', [ $brand->id ]) }}" method="post">

@@ -45,7 +45,7 @@ Route::prefix('admin')->group(function () {
     // Route::get('brands/create', [BrandMasterController::class, 'create'])->name('brands.create');
     
     Route::resource('fragrances', FragranceController::class)->only([
-    'index', 'create', 'store', /*'edit', 'update', 'destroy'*/]);
+    'index', 'create', 'store', 'edit', 'update', 'destroy']);
     Route::resource('brands', BrandMasterController::class)->only([
     'index', 'create', 'store', 'edit', 'update', 'destroy']);
     Route::resource('components', ComponentMasterController::class)->only([
