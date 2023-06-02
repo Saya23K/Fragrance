@@ -63,6 +63,12 @@
                                         <textarea class="form-control" name="comment" cols="50" rows="5">{{ $fragrance->comment }}</textarea>
                                 </div><br>
                                 <div class="form-group row">
+                                        <div class="image col-md-6 text-right mt-4">
+                                            @if ($fragrance->image_path)
+                                                <img src="{{ secure_asset('storage/image/' . $fragrance->image_path) }}">
+                                            @endif
+                                        </div>
+                            
                                         <label class="col-md-2">画像</label>
                                         <div class="col-md-10">
                                         <input type="file" class="form-control-file" name="image">

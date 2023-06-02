@@ -18,7 +18,7 @@ use App\Http\Controllers\Admin\ComponentMasterController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('entry');
 });
 
 Route::middleware('auth')->group(function(){
@@ -58,6 +58,3 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

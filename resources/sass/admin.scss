@@ -1,12 +1,17 @@
 body {
-  background-repeat: no-repeat;
+  background-image: url(../../public/storage/image/AdminTopBack.jpg);
+  background-repeat:no-repeat;
   background-position: center;
-  background-color: #FFF;
-  color: #000;
+  background-size: cover;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+  width: 100%;
+  height: 100vh;
 }
 
 .navbar-laravel {
-  background-color: #FFF;
+  // background-color: #FFF;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
 
@@ -47,4 +52,8 @@ body {
   color: #000;
   border-color: #000;
   background-color: #FFF;
+}
+
+.contents {
+　height: 100vh;
 }

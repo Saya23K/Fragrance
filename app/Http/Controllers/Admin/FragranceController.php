@@ -63,10 +63,8 @@ class FragranceController extends Controller
         // フォームから画像が送信されてきたら、保存して、$fragrance->image_path に画像のパスを保存する
         if (isset($form['image'])) {
             
-            $file = $request->file('image');
             //dd($file);
-            $path = $file->store('public/image');
-            // $path = $request->file('image')->store('public/image');
+            $path = $request->file('image')->store('public/image');
             $fragrance->image_path = basename($path);
         } else {
             $fragrance->image_path = null;

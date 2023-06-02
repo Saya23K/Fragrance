@@ -1,0 +1,24 @@
+.entry {
+  cursor: pointer;
+  height: 200px;
+  margin-inline: auto;
+  margin-top: 20px;
+  position: relative;
+  width: 200px;
+}
+/* 画像のスタイル */
+.entry img {
+  height: auto;
+  left: 0;
+  position: absolute;
+  width: 100%;
+}
+/* 2枚目の画像は最初透明 */
+.entry img:last-of-type {
+  opacity: 0;
+  transition: opacity .7s;
+}
+/* hoverすると2枚目の画像が透明じゃなくなる */
+.entry:hover img {
+  opacity: 1;
+}
