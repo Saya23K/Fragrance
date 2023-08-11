@@ -26,9 +26,11 @@
                                 </select>
                                 <br>
                                 <label>トップノート</label><br>
+                                <div class="d-flex justify-content-start flex-wrap">
                                 @foreach ($components as $component)
-                                    <input type="checkbox" name="topnote[]" value="{{ $component->id }}">{{ $component->component }}
+                                    <div style="width:20%;"><input type="checkbox" name="topnote[]" value="{{ $component->id }}">{{ $component->component }}</div>
                                 @endforeach
+                                </div>
                                 <br>
                                 <label>ミドルノート</label><br>
                                 @foreach ($components as $component)
@@ -56,6 +58,12 @@
                                         <label class="col-md-2">画像</label>
                                         <div class="col-md-10">
                                         <input type="file" class="form-control-file" name="image">
+                                        </div>
+                                </div>
+                                <div class="form-group row">
+                                        <label class="col-md-2">シルエット</label>
+                                        <div class="col-md-10">
+                                        <input type="file" class="form-control-file" name="silhouette">
                                         </div>
                                 </div>
                                 

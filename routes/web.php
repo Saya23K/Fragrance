@@ -18,8 +18,19 @@ use App\Http\Controllers\Admin\ComponentMasterController;
 */
 
 Route::get('/', function () {
-    return view('entry');
+    return view('user.entry');
 });
+
+
+
+Route::get('/random', [App\Http\Controllers\User\FragranceController::class, 'random'])->name('random');
+
+Route::get('/info/{id}', [App\Http\Controllers\User\FragranceController::class, 'show'])->name('info');
+
+Route::get('/search', [App\Http\Controllers\User\FragranceController::class, 'search'])->name('search');
+
+
+
 
 Route::middleware('auth')->group(function(){
     Route::get('admin', [TopController::class, 'index'])->name('admin.top');

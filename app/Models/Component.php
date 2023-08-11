@@ -16,4 +16,11 @@ class Component extends Model
         'm_component_id' => 'required',
         'note' => 'required',
     );
+    
+     public function m_component()
+    {
+        return $this->belongsTo('App\Models\MComponent','m_component_id');
+
+    }
 }
+

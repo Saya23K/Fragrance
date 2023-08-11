@@ -16,6 +16,7 @@ mix.js('resources/js/app.js', 'public/js')
     .sass('resources/sass/admin.scss', 'public/css')
     .sass('resources/sass/form.scss', 'public/css')
     .sass('resources/sass/entry.scss', 'public/css')
+    .sass('resources/sass/user.scss', 'public/css')
     .sourceMaps();
     
     mix.webpackConfig({

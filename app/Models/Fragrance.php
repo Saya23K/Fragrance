@@ -28,5 +28,29 @@ class Fragrance extends Model
 
     }
     
+     public function components()
+    {
+        return $this->hasMany('App\Models\Component');
+
+    }
+    
+     public function top_components()
+    {
+        return $this->hasMany('App\Models\Component')->where('note',1);
+
+    }
+    
+     public function middle_components()
+    {
+        return $this->hasMany('App\Models\Component')->where('note',2);
+
+    }
+    
+     public function last_components()
+    {
+        return $this->hasMany('App\Models\Component')->where('note',3);
+
+    }
+    
 }
 

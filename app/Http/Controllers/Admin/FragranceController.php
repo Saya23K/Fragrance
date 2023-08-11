@@ -38,7 +38,9 @@ class FragranceController extends Controller
         $brands = $mbrand->get();
         
         $mcomponent = new MComponent();
-        $components = $mcomponent->get();
+        $components = $mcomponent->get()->sortBy('component');
+        
+        
         
         // dd($brands);
         
@@ -64,10 +66,19 @@ class FragranceController extends Controller
         if (isset($form['image'])) {
             
             //dd($file);
-            $path = $request->file('image')->store('public/image');
+            $path = $request->file('image')->store('public/image/fragrance');
             $fragrance->image_path = basename($path);
         } else {
             $fragrance->image_path = null;
+        }
+        
+        if (isset($form['silhouette'])) {
+            
+            //dd($file);
+            $path = $request->file('silhouette')->store('public/image/silhouette');
+            $fragrance->silhouette_path = basename($path);
+        } else {
+            $fragrance->silhouette_path = null;
         }
         
         $topnotes = $form['topnote'];
@@ -78,6 +89,7 @@ class FragranceController extends Controller
         unset($form['_token']);
         // フォームから送信されてきたimageを削除する
         unset($form['image']);
+        unset($form['silhouette']);
         //  フォームから送信されてきたnoteを削除する
         unset($form['topnote']);
         unset($form['middlenote']);
@@ -145,9 +157,17 @@ class FragranceController extends Controller
         $mcomponent = new MComponent();
         $components = $mcomponent->get();
         
-        $fragrance = fragrance::find($id);
+        // $component = new Component();
+        // $components = $component->get();
+        
+        // $component = Component::find(1);
+        // $test = $component->component->component;
+        
+        //  dd($test);
+        
+        $fragrances = fragrance::find($id);
     
-        return view('admin.fragrance.edit', compact('brands', 'components', 'fragrance'));
+        return view('admin.fragrance.edit', compact('brands', 'components', 'fragrances'));
         
     }
 
@@ -163,14 +183,31 @@ class FragranceController extends Controller
          // Validationをかける
         $this->validate($request, fragrance::$rules);
         // Modelからデータを取得する
-        $fragrance = fragrance::find($request->id);
+        $fragrance = fragrance::find($id);
         // 送信されてきたフォームデータを格納する
         $form = $request->all();
         
+        if (isset($form['image'])) {
+            
+            //dd($file);
+            $path = $request->file('image')->store('public/image/fragrance');
+            $fragrance->image_path = basename($path);
+        }
+        
+        if (isset($form['silhouette'])) {
+            
+            // dd($request);
+            $path = $request->file('silhouette')->store('public/image/silhouette');
+            $fragrance->silhouette_path = basename($path);
+        }
+        
         unset($form['_token']);
+        unset($form['image']);
+        unset($form['silhouette']);
+        
 
         // 該当するデータを上書きして保存する
-        $brand->fill($form)->save();
+        $fragrance->fill($form)->save();
 
         return redirect('admin/fragrances');
     }
@@ -184,5 +221,11 @@ class FragranceController extends Controller
     public function destroy($id)
     {
         //
+        $fragrances = Fragrance::find($id);
+        
+        $fragranes->delete();
+        
+        return redirect( 'admin/fragrances' );
+        
     }
 }

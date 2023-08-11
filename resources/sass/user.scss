@@ -1,0 +1,105 @@
+.main {
+  height:100vh
+}
+
+body {
+  background-image: url(../../public/storage/image/UserBack.jpg);
+  background-repeat:repeat;
+  background-size: 30% auto;
+  font-family: 'Zen Maru Gothic', sans-serif;
+}
+
+// .rando {
+//   display:flex
+// }
+
+// .navbar-laravel {
+//   // background-color: #FFF;
+//   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+// }
+
+// .navbar-brand {
+//   color: #000 !important;
+// }
+
+// .nav-link {
+//   color: #000 !important;
+// }
+
+// .table-dark {
+//   color: #000;
+// }
+
+// .list-group-item {
+//   border-color: #000;
+//   background-color: #FFF;
+// }
+
+// .login-box {
+//   background-color: rgba(0, 0, 0, 0);
+// }
+
+// .login-header {
+//   background-color: rgba(0, 0, 0, 0.25)
+// }
+
+// .login-body {
+//   background-color: rgba(0, 0, 0, 0.25);
+// }
+
+// .form-group {
+//   margin-bottom: 1rem;
+// }
+
+// .list-group-item {
+//   color: #000;
+//   border-color: #000;
+//   background-color: #FFF;
+// }
+
+// .contents {
+// 　height: 100vh;
+// }
+
+.switch{
+  text-decoration: none;
+}
+
+.fragrance{
+  display: none;
+}
+
+.index{
+  padding: 10px;
+  margin : 30px ;
+  border: 2px solid white ;
+  width : 90% ;
+  background-color : rgba(255,255,255,0.2);
+  
+  border-radius: 20px ;
+}
+
+a {
+  color:#000;
+}
+
+.test {
+  background-color: rgba(255,255,255,0.5);
+}
+
+
+.navbar{
+  width: 80%;
+  
+  // background-color: rgba(255,255,255,0.5);
+}
+
+.info{
+  padding: 60px;
+  margin : 30px ;
+  border: 2px solid white ;
+  width : 60%;
+  background-color : rgba(255,255,255,0.2);
+  
+  border-radius: 20px ;
+}

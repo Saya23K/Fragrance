@@ -1,0 +1,48 @@
+.main {
+  height: 100vh;
+}
+
+body {
+  background-image: url(/images/UserBack.jpg?85ec34c0d30b4665d1159276fc1d5e6a);
+  background-repeat: repeat;
+  background-size: 30% auto;
+  font-family: "Zen Maru Gothic", sans-serif;
+}
+
+.switch {
+  text-decoration: none;
+}
+
+.fragrance {
+  display: none;
+}
+
+.index {
+  padding: 10px;
+  margin: 30px;
+  border: 2px solid white;
+  width: 90%;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+}
+
+a {
+  color: #000;
+}
+
+.test {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.navbar {
+  width: 80%;
+}
+
+.info {
+  padding: 60px;
+  margin: 30px;
+  border: 2px solid white;
+  width: 60%;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+}

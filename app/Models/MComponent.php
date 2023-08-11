@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+
 class MComponent extends Model
 {
     use HasFactory;
@@ -15,5 +16,5 @@ class MComponent extends Model
         'component' => 'required',
         // 'component_comment' => 'required',
     );
-    
+
 }

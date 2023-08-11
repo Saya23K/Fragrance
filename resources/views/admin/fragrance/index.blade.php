@@ -18,7 +18,7 @@
                                         <td>{{$fragrance->id}}</td>
                                         <td>
                                                 @if ($fragrance->image_path)
-                                                <img src="{{ secure_asset('storage/image/' . $fragrance->image_path) }}" width="100" height="100">
+                                                <img src="{{ secure_asset('storage/image/fragrance/' . $fragrance->image_path) }}" width="100" height="100">
                                                 @endif
                                         </td>
                                         <td>{{$fragrance->brand->brand}}</td>

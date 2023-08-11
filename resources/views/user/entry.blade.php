@@ -7,7 +7,7 @@
     
     <div class="entry">
     
-        <a href="{{ url('/admin/fragrances/') }}">
+        <a href="{{ route('random') }}">
             <img src="{{ asset('storage/image/Top.jpg')}}" width="50%" height="auto" alt="Top">
             <img src="{{ asset('storage/image/Enter.jpg')}}" width="50%" height="auto" alt="Enter">
         </a>

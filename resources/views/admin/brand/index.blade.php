@@ -2,8 +2,8 @@
         
 @section('content')
         <div class="col-md-8 mx-auto">
-        <link href="{{ secure_asset('css/form.css') }}" rel="stylesheet">
-                
+                <link href="{{ secure_asset('css/form.css') }}" rel="stylesheet">
+                        
                 <h2>登録ブランド一覧</h2>
                 
                 <a href="{{ url('admin/brands/create') }}">新規登録</a>
@@ -18,9 +18,8 @@
                                
                         </tr>
                 </table>
+                @endforeach
         </div>
-        @endforeach
-        
         
         
 @endsection
