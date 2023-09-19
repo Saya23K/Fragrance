@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .main {
   height: 100vh;
 }
@@ -123,4 +124,27 @@ a {
 
 .comment_box p {
   margin: 0;
+}
+
+.box_main {
+  margin: 2em auto;
+  padding: 2em; /*内側余白*/
+  position: relative;
+  padding: 1.5em !important;
+  z-index: 0;
+  background-color: #efede9; /*背景色*/
+}
+
+.box_main:before {
+  position: absolute;
+  border: 2px dashed #A7A297; /*破線の太さ・色*/
+  content: "";
+  display: block;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  margin: 5px;
+  z-index: -1;
+  border-radius: 10px;
 }
