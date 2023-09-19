@@ -1,5 +1,5 @@
 @extends('layouts.admin')
-
+ .
 @section('content')
          <div class="menu">
                 <div class="col-md-8 mx-auto">

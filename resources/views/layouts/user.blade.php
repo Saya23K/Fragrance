@@ -36,7 +36,7 @@
         <div class="test row">
         <header class="navbar mx-auto">
                 <div class="justfy-content-start">
-                    <a class="icon" href="{{route('random')}}"><img src="{{ asset('storage/image/SampleHeader.jpg')}}" width="auto" height="80px" alt="Topへ"></a>
+                    <a class="icon" href="{{route('random')}}"><img src="{{ asset('images/SampleHeader.jpg')}}" width="auto" height="80px" alt="Topへ"></a>
                 </div>
                 <div class="justfy-content-end">
                     <form action="{{ route('search') }}" method="get">
