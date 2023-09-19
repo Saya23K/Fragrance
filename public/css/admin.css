@@ -1,9 +1,11 @@
 @charset "UTF-8";
 body {
-  background-image: url(/images/AdminTopBack.jpg?69f5fdc0e8fe94fdbd55fad7af6e2cbc);
-  background-repeat: no-repeat;
+  background-image: url(/images/AdminTopBack.jpg?42606f4d79ed66ead0f43ebf7f35d358);
+  background-repeat: repeat;
   background-position: center;
-  background-size: cover;
+  background-size: auto;
+  background-color: rgba(255, 255, 255, 0.5);
+  background-blend-mode: lighten;
   width: 100%;
   height: 100vh;
 }
@@ -53,4 +55,38 @@ body {
 
 .contents {
   　height: 100vh;
+}
+
+.component_box {
+  padding: 10px;
+  margin: 30px;
+  border: 2px solid white;
+  width: 90%;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+}
+
+.table_space {
+  margin-bottom: 30px;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:link {
+  color: #7d7b83;
+}
+
+a:visited {
+  color: #aaaab0;
+}
+
+a:hover {
+  color: #8da0b6;
+  text-decoration: underline;
+}
+
+a:active {
+  color: #bcbace;
 }

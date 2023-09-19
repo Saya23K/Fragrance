@@ -16,7 +16,8 @@ class ComponentMasterController extends Controller
      */
     public function index()
     {
-        $components=MComponent::all();
+        $components=MComponent::all()->sortBy('component');
+        
         
         return view('admin.component.index' , compact('components'));
     }

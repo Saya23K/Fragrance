@@ -1,8 +1,10 @@
 body {
   background-image: url(../../public/storage/image/AdminTopBack.jpg);
-  background-repeat:no-repeat;
+  background-repeat:repeat;
   background-position: center;
-  background-size: cover;
+  background-size: auto;
+  background-color:rgba(255,255,255,0.5);
+  background-blend-mode:lighten;
   // display: flex;
   // justify-content: center;
   // align-items: center;
@@ -57,3 +59,40 @@ body {
 .contents {
 　height: 100vh;
 }
+
+.component_box {
+  padding: 10px;
+  margin : 30px ;
+  border: 2px solid white ;
+  width : 90% ;
+  background-color : rgba(255,255,255,0.2);
+  
+  border-radius: 20px ;
+}
+
+.table_space {
+  margin-bottom: 30px ;
+}
+
+a {
+// font-weight:bold;
+text-decoration:none;
+}
+
+a:link {
+color:#7d7b83;
+}
+
+a:visited {
+color:#aaaab0;
+}
+
+a:hover {
+color:#8da0b6;
+text-decoration:underline;
+}
+
+a:active {
+color:#bcbace;
+}
+  

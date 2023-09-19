@@ -3,12 +3,41 @@
 }
 
 body {
-  background-image: url(../../public/storage/image/UserBack.jpg);
+  color: #4e454a;
+  background-image: url(../../public/storage/image/UserBack1.jpg);
   background-repeat:repeat;
   background-size: 30% auto;
   font-family: 'Zen Maru Gothic', sans-serif;
 }
 
+.brand_name{
+  font-family: 'Fredericka the Great', cursive;
+}
+
+.notebox {
+    position: relative;
+    margin: 2em 0;
+    padding: 0.5em 1em;
+    border: solid 3px #62c1ce;
+}
+.notebox .box-title {
+    position: absolute;
+    display: inline-block;
+    top: -27px;
+    left: -3px;
+    padding: 0 9px;
+    height: 25px;
+    line-height: 25px;
+    font-size: 17px;
+    background: #62c1ce;
+    color: #ffffff;
+    font-weight: bold;
+    border-radius: 5px 5px 0 0;
+}
+.notebox p {
+    margin: 0; 
+    padding: 0;
+}
 // .rando {
 //   display:flex
 // }
@@ -80,7 +109,12 @@ body {
 }
 
 a {
-  color:#000;
+  color: #594e52;
+  text-decoration: none;
+}
+
+.line {
+  border-bottom: 1px dashed;
 }
 
 .test {
@@ -102,4 +136,44 @@ a {
   background-color : rgba(255,255,255,0.2);
   
   border-radius: 20px ;
+}
+
+.centering_item {
+  margin:  0 auto;
+  text-align:  center; 
+}
+
+.comment_box {
+    position: relative;
+    margin-top: 1em;
+    padding: 1.8em 1.5em 1em 1.5em;
+    border: 2px solid #ad96b6;
+    background-color : rgba(255,255,255,0.4);
+}
+
+.comment_box > div {
+    position: absolute;
+    top: -1.15em;
+    left: -.5em;
+    padding: .4em 1.4em;
+    border-radius: 5px;
+    background-color: #ad96b6;
+    color: #fff;
+    font-size: .9em;
+}
+
+.comment_box > div::before {
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 16px;
+    height: 8px;
+    background-color: #ad96b6;
+    clip-path: polygon(0 0, 100% 0, 50% 100%);
+    content: '';
+}
+
+.comment_box p {
+    margin: 0;
 }

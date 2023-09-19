@@ -1,8 +1,5 @@
 @extends('layouts.admin')
 
-@section('css')
-        <link href="{{ secure_asset('css/form.css') }}" rel="stylesheet">
-@endsection
 @section('content')
          <div class="menu">
                 <div class="col-md-8 mx-auto">
